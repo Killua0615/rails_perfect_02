@@ -12,6 +12,8 @@ services:
       - node_modules:/myapp/node_modules
     stdin_open: true
     tty: true
+    environment:
+      - REDIS_URL=redis://redis:6379/0
   webpacker:
     build: .
     command: ./bin/webpack-dev-server
